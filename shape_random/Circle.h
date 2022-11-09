@@ -1,21 +1,17 @@
 #pragma once
-#include <sstream>
-using namespace std;
-
 #include "IShape.h"
-#include "IRandomGenerator.h"
-#include "IntegerGenerator.h"
 
-class Circle : public IShape, public IRandomGenerator {
+class Circle: public IShape {
 private:
     double _r;
 public:
-    inline static const double PI = 3.14;
+    double r() { return _r; }
 public:
-    Circle();
+    Circle() {}
     Circle(double r);
-    double perimeter();
-    double area();
-    void* randomGenerate();
-    string toString();
+    string toString() ;
+    IShape* generate(int, int);
+    string className() { return "Circle"; }
+	float area();
+	float perimeter();
 };

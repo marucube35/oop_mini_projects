@@ -1,19 +1,19 @@
 #pragma once
-#include <sstream>
-
 #include "IShape.h"
-#include "IRandomGenerator.h"
-#include "IntegerGenerator.h"
 
-class Rectangle: public IShape, public IRandomGenerator {
+class Rectangle: public IShape {
 private:
     double _a;
     double _b;
 public:
-    Rectangle();
-    Rectangle(double a, double b);
-    double perimeter();
-    double area();  
-    void* randomGenerate();
-    string toString();
+    double a() { return _a; }
+    double b() { return _b; }
+public:
+    Rectangle() {};
+    Rectangle(int a, int b);
+    string toString() ;
+    IShape* generate(int, int);
+    string className() { return "Rectangle"; }
+    float area();
+    float perimeter();
 };

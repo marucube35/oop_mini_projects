@@ -1,48 +1,41 @@
 #include "Triangle.h"
+#include <sstream>
+using namespace std;
 
-Triangle::Triangle()
-{
-    _a = 0;
-    _b = 0;
-    _c = 0;
-}
+#include "RandomDoubleGenerator.h"
 
-Triangle::Triangle(double a, double b, double c)
-{
+Triangle::Triangle(double a, double b, double c) {
     _a = a;
     _b = b;
     _c = c;
 }
 
-string Triangle::toString()
-{
+string Triangle::toString() {
     stringstream builder;
-
-    builder << "Triangle a = " << _a << ", b = " << _b << ", c = " << _c;
-
-    return builder.str();
-}
-
-double Triangle::perimeter()
-{
-    double result = _a + _b + _c;
+    builder << "Triangle: a=" << _a << ", b=" << _b << ", c=" << _c;
+    
+    string result = builder.str();
     return result;
 }
 
-double Triangle::area()
-{
-    double p = perimeter() / 2.0;
-    double result = sqrt(p * (p - _a) * (p - _b) * (p - _c));
+IShape* Triangle::generate(int left, int right) {
+    double a = RandomDoubleGenerator::instance()->next(left, right);
+    double b = RandomDoubleGenerator::instance()->next(left, right);
+    double c = RandomDoubleGenerator::instance()->next(left, right);
+    
+    IShape* result = new Triangle(a, b, c);
     return result;
 }
 
-void* Triangle::randomGenerate()
+float Triangle::perimeter()
 {
-    IShape* result = new Triangle(
-        IntegerGenerator::instance()->next(0, 100),
-        IntegerGenerator::instance()->next(0, 100),
-        IntegerGenerator::instance()->next(0, 100)
-    );
-
-    return (void*) result;
+    return _a + _b + _c;
 }
+
+float Triangle::area()
+{
+    float p = perimeter();
+    float result = sqrt(p * (p - _a) * (p - _b) * (p - _c));
+    return result;
+}
+

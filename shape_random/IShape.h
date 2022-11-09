@@ -2,9 +2,10 @@
 #include <string>
 using namespace std;
 
-class IShape { // interface ==> contract
+class IShape {
 public:
-    virtual double perimeter() = 0; // pure virtual
-    virtual double area() = 0;      // pure virtual
     virtual string toString() = 0;
+    virtual IShape* generate(int, int) = 0;
+    virtual string className() = 0;
+    
 };
