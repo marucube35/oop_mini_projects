@@ -1,0 +1,25 @@
+Triangle: a=6, b=10, c=6
+Circle: Radius=10
+Circle: Radius=9
+Rectangle: Width=7 Height=11
+Rectangle: Width=9 Height=8
+Rectangle: Width=8 Height=9
+Circle: Radius=11
+Rectangle: Width=10 Height=8
+Circle: Radius=6
+Rectangle: Width=7 Height=6
+Circle: Radius=10
+Triangle: a=11, b=6, c=11
+Triangle: a=6, b=9, c=6
+Triangle: a=7, b=6, c=9
+Rectangle: Width=11 Height=7
+Rectangle: Width=6 Height=9
+Circle: Radius=7
+Circle: Radius=7
+Circle: Radius=10
+Rectangle: Width=10 Height=9
+Rectangle: Width=6 Height=8
+Rectangle: Width=11 Height=6
+Rectangle: Width=9 Height=9
+Rectangle: Width=8 Height=9
+Triangle: a=8, b=8, c=10
